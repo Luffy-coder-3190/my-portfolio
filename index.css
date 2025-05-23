@@ -1,0 +1,225 @@
+/* Custom CSS for animations and effects */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0d2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 3s ease, visibility 0.5s;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.typing-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typing 4s steps(25, end) forwards;
+}
+
+@keyframes typing {
+  to {
+    width: 26ch;
+  }
+}
+
+
+#home{
+    min-height: 100vh;
+    background-image:url(resources/bgImage/laptopbk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.mission{
+    font-style: italic;
+}
+.btn-bd-primary {
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-color: black;
+}
+.primary-color-1{
+    background-color: #2155dc;
+}
+.success-color-1{
+    background-color: #178e43;
+}
+.primary-light-color-1{
+    background-color: #5b5ae7;
+}
+.primary-light-color-2{
+    background-color: #8aa1db;
+    color: blue;
+}
+.container1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    pointer-events: none;
+    z-index: -1; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: 800px;
+
+}
+.circle{
+    position: absolute;
+    background: transparent;
+    z-index: -1;
+    width: calc(var(--i)* 4vmin);
+    aspect-ratio: 1;
+    opacity: 0.5;
+    border-radius: 50%;
+    border: 3px solid rgb(0, 255, 13);
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animate 3s ease-in-out calc(var(--i)*0.08s) infinite;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgb(124, 124,124), inset 0 0 15px rgb(124, 124,124);
+}
+@keyframes animate {
+    0%,
+    100%{
+        transform: rotateX(70deg) translateZ(50px) translateY(0);
+        filter: hue-rotate(0);
+    }
+    50%{
+        transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+        filter: hue-rotate(360deg);
+    }
+
+} 
+
+@media (max-width: 768px) {
+  .circle:nth-child(n-1) {
+    display: none;
+    
+  }
+}
+
+.navbar_color{
+    background: #180233;
+}
+
+.nav-link {
+    position: relative;
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    top: 100%;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::before {
+    width: 100%;
+}
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.skill-bar {
+    transition: width 1.5s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+.heights{
+    height: 200px;
+}
+.emoji{
+    font-size: 60px;
+}
+.bg-purple{
+    background:#862cd6;
+}
+.bg-purple-10{
+    background: rgba(216, 171, 255, 0.25);
+    color: #862cd6;
+    font-weight: lighter;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.bg-purple-1{
+    background: rgba(204, 146, 255, 0.25);
+  
+}
+
+.cont:hover{
+    padding: auto;
+    transform: scale(1.10);
+    box-shadow: black;  
+}
+
+@media (max-width: 768px){
+    .cont:hover{
+    padding: auto;
+    transform: scale(1.03);  
+}
+}
+
+.popupmes{
+   display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.popupmes {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+.popupmes.show {
+  display: flex;
+  opacity: 1;
+}
